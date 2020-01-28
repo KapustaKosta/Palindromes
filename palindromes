@@ -1,0 +1,26 @@
+number = BigInt(1)
+reverseNum = BigInt(0)
+saveNum = BigInt(1)
+newNum = BigInt(number)
+i = UInt128(0)
+function (number)
+   newNum = BigInt(number)
+   global i= 0
+   while (saveNum != reverseNum)
+       global reverseNum
+       reverseNum = 0
+       number = newNum
+       saveNum = number
+       print (number," ", i, '\n', '\n')
+       while (number != 0)
+           reverseNum = reverseNum * 10
+           + number % 10
+           number = number ÷ 10
+       end
+       if (saveNum == reverseNum)
+           break
+       end
+       newNum = saveNum + reverseNum
+       i  =  i + 1
+   end
+end
